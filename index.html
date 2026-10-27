@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈元平课题组 · 江苏大学</title>
+<meta name="description" content="江苏大学物理与电子工程学院陈元平课题组主页：拓扑材料、光电材料、水凝胶、化学气相沉积、有机薄膜。">
+<style>
+  :root {
+    --blue-900: #0C447C;
+    --blue-700: #185FA5;
+    --blue-600: #378ADD;
+    --blue-100: #E6F1FB;
+    --blue-50:  #F2F8FD;
+    --ink:      #1F2933;
+    --ink-2:    #52606D;
+    --ink-3:    #7B8794;
+    --line:     #E4E7EB;
+    --bg:       #FFFFFF;
+    --max:      1040px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- 导航 ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px;
+  }
+  .nav-brand { font-weight: 700; font-size: 17px; color: var(--ink); }
+  .nav-brand span { color: var(--blue-700); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: var(--ink-2); font-size: 15px; font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--blue-700); text-decoration: none; }
+
+  /* ---------- 头部 ---------- */
+  header {
+    background: linear-gradient(180deg, var(--blue-50) 0%, #FFFFFF 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero {
+    max-width: var(--max); margin: 0 auto;
+    padding: 88px 24px 72px;
+  }
+  .hero h1 { font-size: 40px; font-weight: 700; letter-spacing: .5px; }
+  .hero h1 small { display: block; font-size: 17px; font-weight: 400; color: var(--ink-3); margin-top: 10px; letter-spacing: 2px; }
+  .hero p.tagline {
+    margin-top: 24px; font-size: 18px; color: var(--ink-2); max-width: 720px;
+  }
+  .hero .badges { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .badge {
+    background: var(--blue-100); color: var(--blue-900);
+    font-size: 14px; padding: 5px 14px; border-radius: 999px; font-weight: 500;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  section { max-width: var(--max); margin: 0 auto; padding: 64px 24px 8px; }
+  section > h2 {
+    font-size: 26px; font-weight: 700; margin-bottom: 6px;
+    padding-left: 14px; border-left: 4px solid var(--blue-600);
+  }
+  section > .sub { color: var(--ink-3); font-size: 15px; margin-bottom: 28px; margin-left: 18px; }
+
+  /* ---------- 导师 ---------- */
+  .advisor {
+    display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;
+    background: var(--blue-50); border: 1px solid var(--line);
+    border-radius: 16px; padding: 36px 40px;
+  }
+  .advisor .avatar {
+    flex: 0 0 160px; height: 200px; border-radius: 12px;
+    background: linear-gradient(160deg, var(--blue-100), var(--blue-600));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 56px; font-weight: 700;
+  }
+  .advisor .bio { flex: 1 1 420px; }
+  .advisor .bio h3 { font-size: 22px; margin-bottom: 4px; }
+  .advisor .bio .title { color: var(--blue-700); font-size: 15px; font-weight: 500; margin-bottom: 16px; }
+  .advisor .bio ul { list-style: none; }
+  .advisor .bio li {
+    padding-left: 22px; position: relative; margin-bottom: 8px; color: var(--ink-2); font-size: 15px;
+  }
+  .advisor .bio li::before {
+    content: ""; position: absolute; left: 4px; top: 11px;
+    width: 7px; height: 7px; border-radius: 50%; background: var(--blue-600);
+  }
+
+  /* ---------- 研究方向 ---------- */
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+  }
+  .card {
+    border: 1px solid var(--line); border-radius: 14px; padding: 26px 26px 22px;
+    transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: var(--blue-600); transform: translateY(-2px); }
+  .card .icon {
+    width: 44px; height: 44px; border-radius: 10px; background: var(--blue-100);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .card .icon svg { width: 24px; height: 24px; stroke: var(--blue-700); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .card p { font-size: 14.5px; color: var(--ink-2); }
+
+  /* ---------- 代表成果 ---------- */
+  table.pubs { width: 100%; border-collapse: collapse; font-size: 15px; }
+  table.pubs th, table.pubs td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.pubs th { color: var(--ink-3); font-weight: 500; font-size: 13.5px; background: var(--blue-50); }
+  table.pubs td.year { color: var(--blue-700); font-weight: 600; white-space: nowrap; }
+  table.pubs tr:hover td { background: var(--blue-50); }
+
+  /* ---------- 招生 ---------- */
+  .recruit {
+    background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+    color: #fff; border-radius: 16px; padding: 44px 48px;
+  }
+  .recruit h2 { color: #fff; border: none; padding: 0; margin-bottom: 16px; }
+  .recruit p { color: rgba(255,255,255,.88); margin-bottom: 12px; font-size: 15.5px; max-width: 760px; }
+  .recruit .points { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .recruit .points span {
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25);
+    padding: 6px 16px; border-radius: 999px; font-size: 14px;
+  }
+
+  /* ---------- 联系 ---------- */
+  .contact { display: flex; gap: 40px; flex-wrap: wrap; }
+  .contact .item { flex: 1 1 260px; border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; }
+  .contact .item h4 { font-size: 14px; color: var(--ink-3); font-weight: 500; margin-bottom: 6px; letter-spacing: 1px; }
+  .contact .item p { font-size: 16px; color: var(--ink); }
+
+  footer {
+    margin-top: 72px; border-top: 1px solid var(--line);
+    padding: 28px 24px 40px; text-align: center;
+    color: var(--ink-3); font-size: 13.5px;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 13.5px; }
+    .recruit { padding: 32px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">陈元平课题组 <span>· 江苏大学</span></div>
+    <div class="nav-links">
+      <a href="#advisor">导师</a>
+      <a href="#research">研究方向</a>
+      <a href="#pubs">代表成果</a>
+      <a href="#recruit">招生</a>
+      <a href="#contact">联系我们</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <h1>陈元平课题组
+      <small>CHEN YUANPING RESEARCH GROUP</small>
+    </h1>
+    <p class="tagline">
+      我们围绕低维与软物质的制备、物理与器件开展研究，聚焦拓扑材料、光电材料与器件、水凝胶柔性传感、化学气相沉积与有机薄膜，探索从材料设计到功能器件的完整链条。
+    </p>
+    <div class="badges">
+      <span class="badge">拓扑材料</span>
+      <span class="badge">光电材料与器件</span>
+      <span class="badge">水凝胶柔性传感</span>
+      <span class="badge">化学气相沉积</span>
+      <span class="badge">有机薄膜</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 导师简介 ================= -->
+<section id="advisor">
+  <h2>导师简介</h2>
+  <p class="sub">Principal Investigator</p>
+  <div class="advisor">
+    <!-- TODO: 替换为导师照片：把 photo.jpg 上传到仓库，将下方 <div class="avatar">陈</div> 改为 <img src="photo.jpg" style="flex:0 0 160px;height:200px;border-radius:12px;object-fit:cover"> -->
+    <div class="avatar">陈</div>
+    <div class="bio">
+      <h3>陈元平</h3>
+      <div class="title">教授 · 博士生导师 · 物理与电子工程学院（集成电路学院）院长</div>
+      <ul>
+        <li>2003—2019 年任湘潭大学物理系主任；2019 年至今任职于江苏大学。</li>
+        <li>国家一流本科专业建设点负责人，国家级一流本科课程负责人。</li>
+        <li>教育部首批虚拟教研室常务副主任。</li>
+        <li>长期从事凝聚态物理与材料物理研究，研究领域覆盖拓扑材料、光电材料、水凝胶、化学气相沉积与有机薄膜。</li>
+        <!-- TODO: 可补充：主持项目（国家自然科学基金等）、获奖、学术兼职，由老陈确认后加入 -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 研究方向 ================= -->
+<section id="research">
+  <h2>研究方向</h2>
+  <p class="sub">Research Interests</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg></div>
+      <h3>拓扑材料</h3>
+      <p>拓扑半金属与拓扑绝缘体的能带结构与贝里相位效应，及其非线性光学响应（二次/三次谐波产生）的第一性原理研究与光学表征。</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
+      <h3>光电材料与器件</h3>
+      <p>低维半导体材料的光吸收、载流子动力学与光电探测器件，面向宽光谱探测与光通信应用。</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></div>
+      <h3>水凝胶柔性传感</h3>
+      <p>导电水凝胶的设计、制备与力学—电学耦合特性，发展柔性可穿戴传感器件，面向人机交互与健康监测。</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M7 20V9l5-5 5 5v11"/><path d="M10 20v-6h4v6"/></svg></div>
+      <h3>化学气相沉积（CVD）</h3>
+      <p>二维材料与功能薄膜的可控生长，研究生长动力学与形貌调控，为器件提供高质量材料平台。</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 10v10"/></svg></div>
+      <h3>有机薄膜</h3>
+      <p>有机分子薄膜的组装与非线性光学性质，探索有机光电子材料在光频器件中的应用。</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2-1 3.5-2 4.5V14h-6v-2.5C8 10.5 7 9 7 7a5 5 0 0 1 5-5z"/><path d="M9 17h6M10 20h4"/></svg></div>
+      <h3>AI + 物理</h3>
+      <p>以机器学习为加速器，融入材料筛选、光谱分析与器件优化，支撑上述物理问题的研究。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 代表成果 ================= -->
+<section id="pubs">
+  <h2>代表成果</h2>
+  <p class="sub">Selected Publications</p>
+  <!-- TODO: 下方论文列表为占位示例，请替换为课题组真实代表性论文（题目 / 作者 / 期刊 / 年份 / DOI 链接） -->
+  <table class="pubs">
+    <thead>
+      <tr><th style="width:80px">年份</th><th>论文</th><th style="width:160px">期刊</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="year">2026</td>
+        <td><a href="#">（占位示例）代表性论文题目一：第一作者 / 通讯作者，课题组学生加粗标注</a></td>
+        <td>Physical Review B</td>
+      </tr>
+      <tr>
+        <td class="year">2025</td>
+        <td><a href="#">（占位示例）代表性论文题目二</a></td>
+        <td>Nano Letters</td>
+      </tr>
+      <tr>
+        <td class="year">2025</td>
+        <td><a href="#">（占位示例）代表性论文题目三</a></td>
+        <td>ACS Applied Materials &amp; Interfaces</td>
+      </tr>
+      <tr>
+        <td class="year">2024</td>
+        <td><a href="#">（占位示例）代表性论文题目四</a></td>
+        <td>Advanced Optical Materials</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:14px;color:var(--ink-3);font-size:14px;">完整论文列表可通过 Google Scholar / ORCID 查看（链接待补充）。</p>
+</section>
+
+<!-- ================= 招生 ================= -->
+<section id="recruit">
+  <div class="recruit">
+    <h2>招生信息</h2>
+    <p>课题组常年招收凝聚态物理、材料物理与化学方向的硕士研究生与博士研究生，同时欢迎博士后研究人员加盟。课题组注重"计算 + 实验"协同培养，研究生可根据兴趣与特长在理论计算、材料制备与器件表征中找到自己的位置。</p>
+    <p>如果你对拓扑物理、二维材料、光电探测或柔性传感中的任何一个方向感兴趣，欢迎发送简历与成绩单至下方邮箱，我们期待与你交流。</p>
+    <div class="points">
+      <span>硕士 / 博士研究生</span>
+      <span>博士后</span>
+      <span>计算 + 实验协同培养</span>
+      <span>一对一科研指导</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 联系 ================= -->
+<section id="contact">
+  <h2>联系我们</h2>
+  <p class="sub">Contact</p>
+  <div class="contact">
+    <div class="item">
+      <h4>电子邮箱</h4>
+      <!-- TODO: 替换为真实邮箱 -->
+      <p><a href="mailto:chenyp@ujs.edu.cn">chenyp@ujs.edu.cn</a></p>
+    </div>
+    <div class="item">
+      <h4>通讯地址</h4>
+      <p>江苏省镇江市学府路 301 号<br>江苏大学 物理与电子工程学院（集成电路学院）</p>
+    </div>
+    <div class="item">
+      <h4>办公室</h4>
+      <!-- TODO: 替换为真实办公楼与房间号 -->
+      <p>（待补充：三江楼 / 诚意楼 ×××室）</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 陈元平课题组 · 江苏大学物理与电子工程学院（集成电路学院）<br>
+  <span style="font-size:12.5px">Hosted on GitHub Pages</span>
+</footer>
+
+</body>
+</html>
